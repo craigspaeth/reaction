@@ -109,6 +109,7 @@ class Article extends React.Component<ArticleProps, ArticleState> {
               <Share
                 url={`http://www.artsy.net/article/${article.slug}`}
                 title={article.social_title || article.thumbnail_title}
+                article={article}
               />
               {relatedArticlePanel}
             </Sidebar>

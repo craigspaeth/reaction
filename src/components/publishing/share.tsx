@@ -6,6 +6,7 @@ import Icon from "../icon"
 interface ShareProps extends React.HTMLProps<HTMLDivElement> {
   url: string
   title: string
+  article: object
 }
 
 @track()
@@ -16,7 +17,17 @@ class Share extends React.Component<ShareProps, null> {
     this.trackShare = this.trackShare.bind(this)
   }
 
-  @track(props => ({ action: "share article", url: props.url }))
+  @track((props, [e]) => ({
+    action: "Article share",
+    article_id: props.article.id,
+    context_type: "article_fixed",
+    service: (() => {
+      const href = e.currentTarget.attributes.href.value
+      if (href.match("facebook")) return "facebook"
+      if (href.match("twitter")) return "twitter"
+      if (href.match("mailto")) return "email"
+    })(),
+  }))
   trackShare(e) {
     e.preventDefault()
     window.open(e.currentTarget.attributes.href.value, "Share", "width = 600,height = 300")
