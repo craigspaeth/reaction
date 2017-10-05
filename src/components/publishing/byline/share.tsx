@@ -8,7 +8,7 @@ import IconSocialTwitter from "../icon/social_twitter"
 interface ShareProps extends React.HTMLProps<HTMLDivElement> {
   url: string
   title: string
-  article: object
+  article?: object
   color?: string
 }
 
