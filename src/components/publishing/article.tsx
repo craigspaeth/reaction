@@ -5,6 +5,7 @@ import styled from "styled-components"
 import colors from "../../assets/colors"
 import Events from "../../utils/events"
 import track from "../../utils/track"
+import Share from "./byline/share"
 import EmailSignup from "./email_signup"
 import Header from "./header/header"
 import FeatureLayout from "./layouts/feature_layout"
@@ -16,7 +17,6 @@ import RelatedArticlesCanvas from "./related_articles/related_articles_canvas"
 import RelatedArticlesPanel from "./related_articles/related_articles_panel"
 import FullscreenViewer from "./sections/fullscreen_viewer/fullscreen_viewer"
 import Sections from "./sections/sections"
-import Share from "./share"
 import { ArticleData } from "./typings"
 
 export interface ArticleProps {
@@ -25,6 +25,7 @@ export interface ArticleProps {
   relatedArticlesForCanvas?: any
   isTruncated?: boolean
   emailSignupUrl?: string
+  headerHeight?: string
 }
 interface ArticleState {
   viewerIsOpen: boolean
@@ -93,12 +94,12 @@ class Article extends React.Component<ArticleProps, ArticleState> {
   }
 
   render() {
-    const { relatedArticlesForCanvas, relatedArticlesForPanel } = this.props
+    const { relatedArticlesForCanvas, relatedArticlesForPanel, headerHeight } = this.props
     const article = this.state.article
     if (article.layout === "feature") {
       return (
         <div>
-          <Header article={article} />
+          <Header article={article} height={headerHeight} />
           <FeatureLayout>
             <Sections article={article} />
           </FeatureLayout>
@@ -133,7 +134,6 @@ class Article extends React.Component<ArticleProps, ArticleState> {
             </StandardLayout>
             <LineBreak />
             <RelatedArticlesCanvas articles={relatedArticlesForCanvas} vertical={article.vertical} />
-            <LineBreak />
           </ReadMoreWrapper>
           {this.state.isTruncated ? <ReadMore onClick={this.removeTruncation} /> : false}
           <FullscreenViewer
