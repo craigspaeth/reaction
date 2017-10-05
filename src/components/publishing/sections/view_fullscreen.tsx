@@ -14,8 +14,13 @@ class ViewFullscreen extends React.Component<ViewFullscreenProps, void> {
     onViewFullscreen: PropTypes.func,
   }
 
+  constructor(props) {
+    super()
+    this.onClick = this.onClick.bind(this)
+  }
+
   @track({ action: "Clicked article impression" })
-  onClick = e => {
+  onClick(e) {
     e.preventDefault()
     if (this.context.onViewFullscreen) {
       this.context.onViewFullscreen(this.props.index)

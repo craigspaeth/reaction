@@ -8,7 +8,7 @@ import IconSocialTwitter from "../icon/social_twitter"
 interface ShareProps extends React.HTMLProps<HTMLDivElement> {
   url: string
   title: string
-  article?: object
+  articleId?: string
   color?: string
 }
 
@@ -26,7 +26,7 @@ class Share extends React.Component<ShareProps, null> {
 
   @track((props, [e]) => ({
     action: "Article share",
-    article_id: props.article.id,
+    article_id: props.articleId,
     context_type: "article_fixed",
     service: (() => {
       const href = e.currentTarget.attributes.href.value

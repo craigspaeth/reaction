@@ -35,7 +35,7 @@ interface ArticleState {
   isTruncated: boolean
 }
 
-@track({}, { dispatch: data => Events.postEvent(data) })
+@track({ page: "Article" }, { dispatch: data => Events.postEvent(data) })
 class Article extends React.Component<ArticleProps, ArticleState> {
   static childContextTypes = {
     onViewFullscreen: PropTypes.func,
@@ -52,6 +52,18 @@ class Article extends React.Component<ArticleProps, ArticleState> {
       isTruncated: props.isTruncated || false,
     }
   }
+
+  @track((props, [e]) => ({
+    action: "Article Impression",
+    article_id: props.article.id,
+    destination_path: window.location.pathname,
+    // TODO: What do we put here? According to analytics there are the valid types
+    // [newsletter signup, toc, artist follow, image set, article callout, social, related article]
+    impression_type: "related_article",
+    context_type: "article_fixed",
+  }))
+  // tslint:disable-next-line:no-empty
+  componentDidMount() {}
 
   getChildContext() {
     return { onViewFullscreen: this.openViewer }
@@ -126,7 +138,7 @@ class Article extends React.Component<ArticleProps, ArticleState> {
                 <Share
                   url={`http://www.artsy.net/article/${article.slug}`}
                   title={article.social_title || article.thumbnail_title}
-                  article={article}
+                  articleId={article.id}
                 />
                 {emailSignup}
                 {relatedArticlePanel}
