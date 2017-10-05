@@ -17,6 +17,7 @@ import Video from "./sections/video"
 // Icon SVGs
 import EditEmbed from "./icon/edit_embed"
 import EditImages from "./icon/edit_images"
+import EditSection from "./icon/edit_section"
 import EditText from "./icon/edit_text"
 import EditVideo from "./icon/edit_video"
 import HeroImage from "./icon/hero_image"
@@ -29,7 +30,13 @@ import LayoutText from "./icon/layout_text"
 import Remove from "./icon/remove"
 
 // Test Fixtures
-import { ClassicArticle, FeatureArticle, StandardArticle } from "./fixtures/articles"
+import {
+  ClassicArticle,
+  FeatureArticle,
+  ImageHeavyStandardArticle,
+  ShortStandardArticle,
+  StandardArticle,
+} from "./fixtures/articles"
 
 export default {
   Article,
@@ -50,6 +57,7 @@ export default {
   Icon: {
     EditEmbed,
     EditImages,
+    EditSection,
     EditText,
     EditVideo,
     HeroImage,
@@ -64,6 +72,8 @@ export default {
   Fixtures: {
     ClassicArticle,
     FeatureArticle,
+    ImageHeavyStandardArticle,
+    ShortStandardArticle,
     StandardArticle,
   },
 }
