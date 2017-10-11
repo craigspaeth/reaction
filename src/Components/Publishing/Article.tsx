@@ -4,6 +4,7 @@ import * as React from "react"
 import styled, { StyledFunction } from "styled-components"
 import Events from "../../Utils/Events"
 import track from "../../Utils/track"
+import DisplayCanvas from "./Display/Canvas"
 import EmailSignup from "./EmailSignup"
 import Header from "./Header/Header"
 import FeatureLayout from "./Layouts/FeatureLayout"
@@ -16,6 +17,8 @@ import RelatedArticlesPanel from "./RelatedArticles/RelatedArticlesPanel"
 import FullscreenViewer from "./Sections/FullscreenViewer/FullscreenViewer"
 import Sections from "./Sections/Sections"
 import { ArticleData } from "./Typings"
+
+import { Campaign, UnitCanvasOverlay } from "./Fixtures/Components"
 
 export interface ArticleProps {
   article: ArticleData
@@ -116,16 +119,12 @@ class Article extends React.Component<ArticleProps, ArticleState> {
         </ArticleContainer>
       )
     } else {
-      const relatedArticlePanel = relatedArticlesForPanel ? (
-        <RelatedArticlesPanel label={"Related Stories"} articles={relatedArticlesForPanel} />
-      ) : (
-        false
-      )
-      const relatedArticleCanvas = relatedArticlesForCanvas ? (
-        <RelatedArticlesCanvas articles={relatedArticlesForCanvas} vertical={article.vertical} />
-      ) : (
-        false
-      )
+      const relatedArticlePanel = relatedArticlesForPanel
+        ? <RelatedArticlesPanel label={"Related Stories"} articles={relatedArticlesForPanel} />
+        : false
+      const relatedArticleCanvas = relatedArticlesForCanvas
+        ? <RelatedArticlesCanvas articles={relatedArticlesForCanvas} vertical={article.vertical} />
+        : false
       const emailSignup = this.props.emailSignupUrl ? <EmailSignup signupUrl={this.props.emailSignupUrl} /> : false
       return (
         <ArticleContainer marginTop={marginTop}>
@@ -141,6 +140,7 @@ class Article extends React.Component<ArticleProps, ArticleState> {
             {relatedArticleCanvas}
           </ReadMoreWrapper>
           {this.state.isTruncated ? <ReadMore onClick={this.removeTruncation} /> : false}
+          <DisplayCanvas unit={UnitCanvasOverlay} campaign={Campaign} />
           <FullscreenViewer
             onClose={this.closeViewer}
             show={this.state.viewerIsOpen}
