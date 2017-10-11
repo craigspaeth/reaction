@@ -417,3 +417,30 @@ export const SectionText = {
   feature: featureText.join(""),
   standard: standardText.join(""),
 }
+
+export const Display = [
+  {
+    end_date: "2017-12-31",
+    name: "Sample Campaign 2",
+    sov: 0.75,
+    start_date: "2017-12-11T05:00:00.000Z",
+    canvas: {
+      body: "",
+      disclaimer:
+        "Donec id elit non mi porta gravida at eget metus. Cras justo odio, dapibus ac facilisis in, egestas eget quam.",
+      headline: "Commodo Risus Pharetra Fermentum Vehicula Adipiscing",
+      layout: "slideshow",
+      logo: "http://files.artsy.net/images/artsy-logo-wide-black.png",
+      name: null,
+    },
+    panel: {
+      body:
+        "<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. <a href='http://artsy.net/articles'>Example Link</a></p>",
+      disclaimer: null,
+      headline: "Euismod Inceptos Quam",
+      layout: null,
+      logo: "https://artsy-vanity-files-production.s3.amazonaws.com/images/artsy_logo_square_white_transparent.png",
+      name: null,
+    },
+  },
+]

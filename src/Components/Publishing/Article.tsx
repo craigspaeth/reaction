@@ -28,6 +28,7 @@ export interface ArticleProps {
   emailSignupUrl?: string
   headerHeight?: string
   marginTop?: number
+  display?: [object]
 }
 
 interface ArticleState {
