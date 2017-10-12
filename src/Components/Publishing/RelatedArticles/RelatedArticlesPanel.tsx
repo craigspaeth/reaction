@@ -2,10 +2,7 @@ import * as _ from "lodash"
 import React from "react"
 import styled from "styled-components"
 import { crop } from "../../../Utils/resizer"
-import DisplayPanel from "../Display/DisplayPanel"
 import Fonts from "../Fonts"
-
-import { Campaign, UnitPanel } from "../Fixtures/Components"
 
 interface RelatedArticlesPanelProps extends React.HTMLProps<HTMLDivElement> {
   label?: string
@@ -31,7 +28,6 @@ const RelatedArticlesPanel: React.SFC<RelatedArticlesPanelProps> = props => {
           )
         })}
       </Collection>
-      <DisplayPanel unit={UnitPanel} campaign={Campaign} />
     </RelatedArticlesContainer>
   )
 }
