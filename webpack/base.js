@@ -33,6 +33,16 @@ module.exports = () => {
       path: path.join(__dirname, "../dist/Apps/Loyalty/Server/bundles"),
       publicPath: "/Loyalty/bundles",
     },
+    externals: {
+      react: {
+        commonjs: "react",
+        commonjs2: "react",
+      },
+      "react-dom": {
+        commonjs: "react-dom",
+        commonjs2: "react-dom",
+      },
+    },
     plugins: [new webpack.optimize.CommonsChunkPlugin("commons.chunk")],
     resolve: {
       extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js"],

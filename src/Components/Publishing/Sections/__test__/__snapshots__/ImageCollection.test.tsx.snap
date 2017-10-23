@@ -1,12 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a single image properly 1`] = `
-.c10 {
-  color: #999;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
 .c8 {
   padding: 0;
   margin-top: 10px;
@@ -14,14 +8,14 @@ exports[`renders a single image properly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-family: Unica77LLWebRegular ,      'Arial',      'serif';
+  font-family: Unica77LLWebRegular , 'Arial', 'serif';
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   line-height: 1.4em;
 }
 
 .c8 .title {
-  font-family: Unica77LLWebItalic ,      'Arial',      'serif';
+  font-family: Unica77LLWebItalic , 'Arial', 'serif';
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   line-height: 1.4em;
@@ -29,16 +23,18 @@ exports[`renders a single image properly 1`] = `
 
 .c9 {
   color: #999;
-  display: block;
-  -webkit-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 100%;
 }
 
-.c9 .artist-name {
-  margin-right: 20px;
+.c9 .name:after {
+  content: ', ';
+}
+
+.c9 .title:after {
+  content: ', ';
+}
+
+.c9 .date:after {
+  content: ', ';
 }
 
 .c7 {
@@ -77,7 +73,6 @@ exports[`renders a single image properly 1`] = `
 }
 
 .c2 {
-  -webkit-text-decoration: none;
   text-decoration: none;
 }
 
@@ -92,27 +87,31 @@ exports[`renders a single image properly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .c8 {
     padding: 0 10px;
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width:720px) {
   .c3 .c5 {
     opacity: 1;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .c1 {
     margin-bottom: 10px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .c0 {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
@@ -206,67 +205,16 @@ exports[`renders a single image properly 1`] = `
         <div
           className="c9"
         >
-          <span
-            className="artist-name"
-          >
-            <span
-              className="name"
-            >
-              <a
-                className="c10"
-                href="/artist/fernando-botero"
-              >
-                Fernando Botero
-              </a>
-            </span>
-          </span>
-          <span
-            className="title"
-          >
-            <a
-              className="c10"
-              href="/artwork/fernando-botero-nude-on-the-beach"
-            >
-              Nude on the Beach
-            </a>
-          </span>
-          <span
-            className="comma"
-          >
-            ,
-             
-          </span>
-          <span
-            className="date"
-          >
-            2000
-          </span>
-          <span
-            className="comma"
-          >
-            ,
-             
-          </span>
-          <a
-            className="c10"
-            href="/partner/gary-nader"
-          >
-            Gary Nader
-          </a>
+          <div />
         </div>
       </div>
+       */
     </div>
   </div>
 </div>
 `;
 
 exports[`renders properly 1`] = `
-.c10 {
-  color: #999;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
 .c8 {
   padding: 0;
   margin-top: 10px;
@@ -274,14 +222,14 @@ exports[`renders properly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-family: Unica77LLWebRegular ,      'Arial',      'serif';
+  font-family: Unica77LLWebRegular , 'Arial', 'serif';
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   line-height: 1.4em;
 }
 
 .c8 .title {
-  font-family: Unica77LLWebItalic ,      'Arial',      'serif';
+  font-family: Unica77LLWebItalic , 'Arial', 'serif';
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   line-height: 1.4em;
@@ -289,16 +237,18 @@ exports[`renders properly 1`] = `
 
 .c9 {
   color: #999;
-  display: block;
-  -webkit-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 100%;
 }
 
-.c9 .artist-name {
-  margin-right: 20px;
+.c9 .name:after {
+  content: ', ';
+}
+
+.c9 .title:after {
+  content: ', ';
+}
+
+.c9 .date:after {
+  content: ', ';
 }
 
 .c7 {
@@ -337,32 +287,31 @@ exports[`renders properly 1`] = `
 }
 
 .c2 {
-  -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-between;
+  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-  -ms-flex-pack: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   margin: 10px 0 10px 0;
 }
 
-.c13 {
+.c12 {
   padding: 0;
   width: 100%;
   word-break: break-word;
 }
 
-.c13 > p,
-.c13 p,
-.c13 .public-DraftEditorPlaceholder-root {
-  font-family: Unica77LLWebRegular ,      'Arial',      'serif';
+.c12 > p,
+.c12 p,
+.c12 .public-DraftEditorPlaceholder-root {
+  font-family: Unica77LLWebRegular , 'Arial', 'serif';
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   line-height: 1.4em;
@@ -370,13 +319,13 @@ exports[`renders properly 1`] = `
   margin: 0;
 }
 
-.c13 > a,
-.c13 a {
+.c12 > a,
+.c12 a {
   color: #999;
 }
 
-.c13 > a:hover,
-.c13 a:hover {
+.c12 > a:hover,
+.c12 a:hover {
   color: black;
 }
 
@@ -385,12 +334,12 @@ exports[`renders properly 1`] = `
   width: 312px;
 }
 
-.c11 {
+.c10 {
   margin-right: 10px;
   width: 168px;
 }
 
-.c14 {
+.c13 {
   margin-right: 0px;
   width: 178px;
 }
@@ -401,51 +350,55 @@ exports[`renders properly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .c8 {
     padding: 0 10px;
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width:720px) {
   .c3 .c5 {
     opacity: 1;
   }
 }
 
-@media (max-width: 600px) {
-  .c12 {
+@media (max-width:600px) {
+  .c11 {
     padding: 0px 10px;
   }
 }
 
-@media (max-width: 600px) {
-  .c13 {
+@media (max-width:600px) {
+  .c12 {
     padding: 0px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .c1 {
     margin-bottom: 10px;
   }
 }
 
-@media (max-width: 600px) {
-  .c11 {
+@media (max-width:600px) {
+  .c10 {
     margin-bottom: 10px;
   }
 }
 
-@media (max-width: 600px) {
-  .c14 {
+@media (max-width:600px) {
+  .c13 {
     margin-bottom: 10px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .c0 {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
@@ -539,59 +492,14 @@ exports[`renders properly 1`] = `
         <div
           className="c9"
         >
-          <span
-            className="artist-name"
-          >
-            <span
-              className="name"
-            >
-              <a
-                className="c10"
-                href="/artist/fernando-botero"
-              >
-                Fernando Botero
-              </a>
-            </span>
-          </span>
-          <span
-            className="title"
-          >
-            <a
-              className="c10"
-              href="/artwork/fernando-botero-nude-on-the-beach"
-            >
-              Nude on the Beach
-            </a>
-          </span>
-          <span
-            className="comma"
-          >
-            ,
-             
-          </span>
-          <span
-            className="date"
-          >
-            2000
-          </span>
-          <span
-            className="comma"
-          >
-            ,
-             
-          </span>
-          <a
-            className="c10"
-            href="/partner/gary-nader"
-          >
-            Gary Nader
-          </a>
+          <div />
         </div>
       </div>
+       */
     </div>
   </div>
   <div
-    className="c11"
+    className="c10"
     width={168}
   >
     <div
@@ -663,10 +571,10 @@ exports[`renders properly 1`] = `
         </div>
       </div>
       <div
-        className="c12"
+        className="c11"
       >
         <div
-          className="c13"
+          className="c12"
         >
           <div
             dangerouslySetInnerHTML={
@@ -680,7 +588,7 @@ exports[`renders properly 1`] = `
     </div>
   </div>
   <div
-    className="c14"
+    className="c13"
     width={178}
   >
     <div
@@ -752,10 +660,10 @@ exports[`renders properly 1`] = `
         </div>
       </div>
       <div
-        className="c12"
+        className="c11"
       >
         <div
-          className="c13"
+          className="c12"
         >
           <div
             dangerouslySetInnerHTML={

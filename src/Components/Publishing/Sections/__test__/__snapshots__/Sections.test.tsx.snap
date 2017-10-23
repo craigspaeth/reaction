@@ -1,15 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders properly 1`] = `
-.c22 {
+.c21 {
   width: 100%;
   height: 1000px;
-}
-
-.c18 {
-  color: #999;
-  -webkit-text-decoration: none;
-  text-decoration: none;
 }
 
 .c16 {
@@ -19,14 +13,14 @@ exports[`renders properly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-family: Unica77LLWebRegular ,      'Arial',      'serif';
+  font-family: Unica77LLWebRegular , 'Arial', 'serif';
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   line-height: 1.4em;
 }
 
 .c16 .title {
-  font-family: Unica77LLWebItalic ,      'Arial',      'serif';
+  font-family: Unica77LLWebItalic , 'Arial', 'serif';
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   line-height: 1.4em;
@@ -34,16 +28,18 @@ exports[`renders properly 1`] = `
 
 .c17 {
   color: #999;
-  display: block;
-  -webkit-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 100%;
 }
 
-.c17 .artist-name {
-  margin-right: 20px;
+.c17 .name:after {
+  content: ', ';
+}
+
+.c17 .title:after {
+  content: ', ';
+}
+
+.c17 .date:after {
+  content: ', ';
 }
 
 .c11 {
@@ -82,7 +78,6 @@ exports[`renders properly 1`] = `
 }
 
 .c15 {
-  -webkit-text-decoration: none;
   text-decoration: none;
 }
 
@@ -91,9 +86,9 @@ exports[`renders properly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-between;
+  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-  -ms-flex-pack: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   margin: 10px 0 10px 0;
 }
@@ -107,7 +102,7 @@ exports[`renders properly 1`] = `
 .c13 > p,
 .c13 p,
 .c13 .public-DraftEditorPlaceholder-root {
-  font-family: Unica77LLWebRegular ,      'Arial',      'serif';
+  font-family: Unica77LLWebRegular , 'Arial', 'serif';
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   line-height: 1.4em;
@@ -135,27 +130,27 @@ exports[`renders properly 1`] = `
   width: 264px;
 }
 
-.c19 {
+.c18 {
   margin-right: 10px;
+  width: 219px;
+}
+
+.c19 {
+  margin-right: 0px;
   width: 219px;
 }
 
 .c20 {
   margin-right: 0px;
-  width: 219px;
-}
-
-.c21 {
-  margin-right: 0px;
   width: 100%;
 }
 
-.c23 {
+.c22 {
   margin-right: 10px;
   width: 216px;
 }
 
-.c24 {
+.c23 {
   margin-right: 0px;
   width: 222px;
 }
@@ -166,21 +161,24 @@ exports[`renders properly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-.c33 {
+.c32 {
   height: 45px;
   position: relative;
   margin-left: 40px;
-  -webkit-text-align: right;
   text-align: right;
 }
 
-.c33 > svg {
+.c32 > svg {
   height: 98%;
 }
 
-.c26 {
+.c25 {
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -191,31 +189,31 @@ exports[`renders properly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-between;
+  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-  -ms-flex-pack: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   border-radius: 2px;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
   padding: 20px;
   cursor: pointer;
 }
 
-.c26:hover {
-  background: rgba(0, 0, 0, 0.6);
+.c25:hover {
+  background: rgba(0,0,0,0.6);
   color: white;
 }
 
-.c26:hover .c32 {
+.c25:hover .c31 {
   fill: white;
 }
 
-.c27 {
+.c26 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -223,15 +221,15 @@ exports[`renders properly 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: space-between;
+  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-  -ms-flex-pack: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   height: 50px;
 }
 
-.c28 {
-  font-family: Unica77LLWebMedium ,      'Arial',      'serif';
+.c27 {
+  font-family: Unica77LLWebMedium , 'Arial', 'serif';
   -webkit-font-smoothing: antialiased;
   font-size: 19px;
   line-height: 1.5em;
@@ -239,22 +237,22 @@ exports[`renders properly 1`] = `
   line-height: 1.1em;
 }
 
-.c29 {
+.c28 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c30 {
-  font-family: Unica77LLWebMedium ,      'Arial',      'serif';
+.c29 {
+  font-family: Unica77LLWebMedium , 'Arial', 'serif';
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   line-height: 1.4em;
 }
 
-.c31 {
-  font-family: Unica77LLWebRegular ,      'Arial',      'serif';
+.c30 {
+  font-family: Unica77LLWebRegular , 'Arial', 'serif';
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   line-height: 1.4em;
@@ -294,7 +292,7 @@ exports[`renders properly 1`] = `
   margin-bottom: 40px;
 }
 
-.c25 {
+.c24 {
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -307,12 +305,10 @@ exports[`renders properly 1`] = `
 
 .c2 {
   position: relative;
-  padding-bottom: ;
 }
 
 .c2 a {
   color: black;
-  -webkit-text-decoration: none;
   text-decoration: none;
   position: relative;
   background-image: linear-gradient(to bottom,transparent 0,#333 1px,transparent 0);
@@ -328,7 +324,7 @@ exports[`renders properly 1`] = `
 .c2 p,
 .c2 ul,
 .c2 ol {
-  font-family: 'Adobe Garamond W08',  'adobe-garamond-pro',  'AGaramondPro-Regular',  'Times New Roman',  'Times',  'serif';
+  font-family: 'Adobe Garamond W08', 'adobe-garamond-pro', 'AGaramondPro-Regular', 'Times New Roman', 'Times', 'serif';
   -webkit-font-smoothing: antialiased;
   font-size: 23px;
   line-height: 1.5em;
@@ -352,7 +348,7 @@ exports[`renders properly 1`] = `
 }
 
 .c2 li {
-  font-family: 'Adobe Garamond W08',  'adobe-garamond-pro',  'AGaramondPro-Regular',  'Times New Roman',  'Times',  'serif';
+  font-family: 'Adobe Garamond W08', 'adobe-garamond-pro', 'AGaramondPro-Regular', 'Times New Roman', 'Times', 'serif';
   -webkit-font-smoothing: antialiased;
   font-size: 23px;
   line-height: 1.5em;
@@ -361,7 +357,7 @@ exports[`renders properly 1`] = `
 }
 
 .c2 h1 {
-  font-family: Unica77LLWebRegular ,      'Arial',      'serif';
+  font-family: Unica77LLWebRegular , 'Arial', 'serif';
   -webkit-font-smoothing: antialiased;
   font-size: 40px;
   line-height: 1.1em;
@@ -370,7 +366,6 @@ exports[`renders properly 1`] = `
   padding-bottom: 46px;
   margin: 0;
   position: relative;
-  -webkit-text-align: center;
   text-align: center;
 }
 
@@ -386,7 +381,7 @@ exports[`renders properly 1`] = `
 }
 
 .c2 h2 {
-  font-family: Unica77LLWebRegular ,      'Arial',      'serif';
+  font-family: Unica77LLWebRegular , 'Arial', 'serif';
   -webkit-font-smoothing: antialiased;
   font-size: 32px;
   line-height: 1.1em;
@@ -399,7 +394,7 @@ exports[`renders properly 1`] = `
 }
 
 .c2 h3 {
-  font-family: Unica77LLWebRegular ,      'Arial',      'serif';
+  font-family: Unica77LLWebRegular , 'Arial', 'serif';
   -webkit-font-smoothing: antialiased;
   font-size: 19px;
   line-height: 1.5em;
@@ -410,22 +405,17 @@ exports[`renders properly 1`] = `
 
 .c2 h3 strong {
   font-weight: normal;
-  font-family: Unica77LLWebMedium ,      'Arial',      'serif';
+  font-family: Unica77LLWebMedium , 'Arial', 'serif';
   -webkit-font-smoothing: antialiased;
   font-size: 19px;
   line-height: 1.5em;
 }
 
-.c2 h3 em {
-  font-style: ;
-}
-
 .c2 blockquote {
-  font-family: 'Adobe Garamond W08',  'adobe-garamond-pro',  'AGaramondPro-Regular',  'Times New Roman',  'Times',  'serif';
+  font-family: 'Adobe Garamond W08', 'adobe-garamond-pro', 'AGaramondPro-Regular', 'Times New Roman', 'Times', 'serif';
   -webkit-font-smoothing: antialiased;
   font-size: 50px;
   line-height: 1.1em;
-  -webkit-text-align: left;
   text-align: left;
   font-weight: normal;
   padding-top: 46px;
@@ -434,7 +424,7 @@ exports[`renders properly 1`] = `
 }
 
 .c2 .content-start {
-  font-family: Unica77LLWebMedium ,      'Arial',      'serif';
+  font-family: Unica77LLWebMedium , 'Arial', 'serif';
   -webkit-font-smoothing: antialiased;
   font-size: 67px;
   line-height: 1em;
@@ -442,7 +432,6 @@ exports[`renders properly 1`] = `
   line-height: .5em;
   margin-right: 10px;
   margin-top: .298em;
-  -webkit-text-transform: uppercase;
   text-transform: uppercase;
 }
 
@@ -473,11 +462,10 @@ exports[`renders properly 1`] = `
 
 .c2 .artist-follow:after {
   content: "Follow";
-  font-family: 'Adobe Garamond W08',  'adobe-garamond-pro',  'AGaramondPro-Regular',  'Times New Roman',  'Times',  'serif';
+  font-family: 'Adobe Garamond W08', 'adobe-garamond-pro', 'AGaramondPro-Regular', 'Times New Roman', 'Times', 'serif';
   -webkit-font-smoothing: antialiased;
   font-size: 17px;
   line-height: 1.1em;
-  -webkit-text-transform: none;
   text-transform: none;
 }
 
@@ -498,79 +486,79 @@ exports[`renders properly 1`] = `
   max-width: 780px;
 }
 
-@media (max-width: 600px) {
-  .c22 {
+@media (max-width:600px) {
+  .c21 {
     height: 1300px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .c16 {
     padding: 0 10px;
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width:720px) {
   .c7 .c9 {
     opacity: 1;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .c12 {
     padding: 0px 10px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .c13 {
     padding: 0px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .c6 {
     margin-bottom: 10px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .c14 {
     margin-bottom: 10px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
+  .c18 {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width:600px) {
   .c19 {
     margin-bottom: 10px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .c20 {
     margin-bottom: 10px;
   }
 }
 
-@media (max-width: 600px) {
-  .c21 {
+@media (max-width:600px) {
+  .c22 {
     margin-bottom: 10px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .c23 {
     margin-bottom: 10px;
   }
 }
 
-@media (max-width: 600px) {
-  .c24 {
-    margin-bottom: 10px;
-  }
-}
-
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .c5 {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
@@ -578,46 +566,46 @@ exports[`renders properly 1`] = `
   }
 }
 
-@media (max-width: 600px) {
-  .c33 {
+@media (max-width:600px) {
+  .c32 {
     display: none;
   }
 }
 
-@media (max-width: 600px) {
-  .c28 {
-    font-family: Unica77LLWebMedium ,      'Arial',      'serif';
+@media (max-width:600px) {
+  .c27 {
+    font-family: Unica77LLWebMedium , 'Arial', 'serif';
     -webkit-font-smoothing: antialiased;
     font-size: 16px;
     line-height: 1.1em;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
+  .c29 {
+    font-family: Unica77LLWebMedium , 'Arial', 'serif';
+    -webkit-font-smoothing: antialiased;
+    font-size: 12px;
+    line-height: 1.4em;
+  }
+}
+
+@media (max-width:600px) {
   .c30 {
-    font-family: Unica77LLWebMedium ,      'Arial',      'serif';
+    font-family: Unica77LLWebRegular , 'Arial', 'serif';
     -webkit-font-smoothing: antialiased;
     font-size: 12px;
     line-height: 1.4em;
   }
 }
 
-@media (max-width: 600px) {
-  .c31 {
-    font-family: Unica77LLWebRegular ,      'Arial',      'serif';
-    -webkit-font-smoothing: antialiased;
-    font-size: 12px;
-    line-height: 1.4em;
-  }
-}
-
-@media (max-width: 1250px) {
+@media (max-width:1250px) {
   .c1 {
     width: 680px;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width:900px) {
   .c1 {
     width: 100%;
     padding: 0 20px;
@@ -625,13 +613,13 @@ exports[`renders properly 1`] = `
   }
 }
 
-@media (max-width: 1250px) {
+@media (max-width:1250px) {
   .c3 {
     width: 680px;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width:900px) {
   .c3 {
     width: 100%;
     padding: 0 20px;
@@ -639,13 +627,13 @@ exports[`renders properly 1`] = `
   }
 }
 
-@media (max-width: 1250px) {
+@media (max-width:1250px) {
   .c4 {
     width: 680px;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width:900px) {
   .c4 {
     width: 100%;
     padding: 0px;
@@ -653,66 +641,66 @@ exports[`renders properly 1`] = `
   }
 }
 
-@media (max-width: 1250px) {
-  .c25 {
+@media (max-width:1250px) {
+  .c24 {
     width: 680px;
   }
 }
 
-@media (max-width: 900px) {
-  .c25 {
+@media (max-width:900px) {
+  .c24 {
     width: 100%;
     padding: 0px;
     margin: 0 0 40px 0;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width:900px) {
   .c2 {
     max-width: calc(100% - 40px);
     margin: 0 auto;
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width:720px) {
   .c2 {
     max-width: 100%;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .c2 p,
   .c2 ul,
   .c2 ol {
-    font-family: 'Adobe Garamond W08',  'adobe-garamond-pro',  'AGaramondPro-Regular',  'Times New Roman',  'Times',  'serif';
+    font-family: 'Adobe Garamond W08', 'adobe-garamond-pro', 'AGaramondPro-Regular', 'Times New Roman', 'Times', 'serif';
     -webkit-font-smoothing: antialiased;
     font-size: 19px;
     line-height: 1.5em;
   }
 
   .c2 li {
-    font-family: 'Adobe Garamond W08',  'adobe-garamond-pro',  'AGaramondPro-Regular',  'Times New Roman',  'Times',  'serif';
+    font-family: 'Adobe Garamond W08', 'adobe-garamond-pro', 'AGaramondPro-Regular', 'Times New Roman', 'Times', 'serif';
     -webkit-font-smoothing: antialiased;
     font-size: 19px;
     line-height: 1.5em;
   }
 
   .c2 h1 {
-    font-family: Unica77LLWebRegular ,      'Arial',      'serif';
+    font-family: Unica77LLWebRegular , 'Arial', 'serif';
     -webkit-font-smoothing: antialiased;
     font-size: 34px;
     line-height: 1.1em;
   }
 
   .c2 h2 {
-    font-family: Unica77LLWebRegular ,      'Arial',      'serif';
+    font-family: Unica77LLWebRegular , 'Arial', 'serif';
     -webkit-font-smoothing: antialiased;
     font-size: 32px;
     line-height: 1.1em;
   }
 
   .c2 h3 {
-    font-family: Unica77LLWebRegular ,      'Arial',      'serif';
+    font-family: Unica77LLWebRegular , 'Arial', 'serif';
     -webkit-font-smoothing: antialiased;
     font-size: 16px;
     line-height: 1.1em;
@@ -720,14 +708,14 @@ exports[`renders properly 1`] = `
   }
 
   .c2 h3 strong {
-    font-family: Unica77LLWebMedium ,      'Arial',      'serif';
+    font-family: Unica77LLWebMedium , 'Arial', 'serif';
     -webkit-font-smoothing: antialiased;
     font-size: 16px;
     line-height: 1.1em;
   }
 
   .c2 blockquote {
-    font-family: 'Adobe Garamond W08',  'adobe-garamond-pro',  'AGaramondPro-Regular',  'Times New Roman',  'Times',  'serif';
+    font-family: 'Adobe Garamond W08', 'adobe-garamond-pro', 'AGaramondPro-Regular', 'Times New Roman', 'Times', 'serif';
     -webkit-font-smoothing: antialiased;
     font-size: 40px;
     line-height: 1.1em;
@@ -738,14 +726,14 @@ exports[`renders properly 1`] = `
   }
 }
 
-@media (max-width: 1250px) {
+@media (max-width:1250px) {
   .c0 {
     max-width: 680px;
     margin: auto;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width:900px) {
   .c0 {
     max-width: 780px;
   }
@@ -1081,44 +1069,10 @@ exports[`renders properly 1`] = `
             <div
               className="c17"
             >
-              <span
-                className="artist-name"
-              >
-                <span
-                  className="name"
-                >
-                  <a
-                    className="c18"
-                    href="/artist/matt-devine"
-                  >
-                    Matt Devine
-                  </a>
-                </span>
-              </span>
-              <span
-                className="title"
-              >
-                <a
-                  className="c18"
-                  href="/artwork/matt-devine-brass-tax"
-                >
-                  Brass Tax
-                </a>
-              </span>
-              <span
-                className="comma"
-              >
-                ,
-                 
-              </span>
-              <a
-                className="c18"
-                href="/partner/joanne-artman-gallery"
-              >
-                Joanne Artman Gallery
-              </a>
+              <div />
             </div>
           </div>
+           */
         </div>
       </div>
     </div>
@@ -1145,7 +1099,7 @@ exports[`renders properly 1`] = `
       className="c5"
     >
       <div
-        className="c19"
+        className="c18"
         width={219}
       >
         <div
@@ -1234,7 +1188,7 @@ exports[`renders properly 1`] = `
         </div>
       </div>
       <div
-        className="c19"
+        className="c18"
         width={219}
       >
         <div
@@ -1323,7 +1277,7 @@ exports[`renders properly 1`] = `
         </div>
       </div>
       <div
-        className="c20"
+        className="c19"
         width={219}
       >
         <div
@@ -1435,7 +1389,7 @@ exports[`renders properly 1`] = `
       className="c5"
     >
       <div
-        className="c21"
+        className="c20"
         width={undefined}
       >
         <div
@@ -1544,7 +1498,7 @@ exports[`renders properly 1`] = `
     className="c4"
   >
     <iframe
-      className="c22"
+      className="c21"
       frameBorder="0"
       height={1000}
       scrolling="no"
@@ -1573,7 +1527,7 @@ exports[`renders properly 1`] = `
       className="c5"
     >
       <div
-        className="c23"
+        className="c22"
         width={216}
       >
         <div
@@ -1662,7 +1616,7 @@ exports[`renders properly 1`] = `
         </div>
       </div>
       <div
-        className="c19"
+        className="c18"
         width={219}
       >
         <div
@@ -1751,7 +1705,7 @@ exports[`renders properly 1`] = `
         </div>
       </div>
       <div
-        className="c24"
+        className="c23"
         width={222}
       >
         <div
@@ -1857,7 +1811,7 @@ exports[`renders properly 1`] = `
     </div>
   </div>
   <div
-    className="c25"
+    className="c24"
   >
     <div
       style={
@@ -1868,27 +1822,27 @@ exports[`renders properly 1`] = `
       }
     >
       <div
-        className="c26"
+        className="c25"
         onClick={[Function]}
       >
         <div
-          className="c27"
+          className="c26"
         >
           <div
-            className="c28"
+            className="c27"
           >
             The Work of Bruce M. Sherman
           </div>
           <div
-            className="c29"
+            className="c28"
           >
             <div
-              className="c30"
+              className="c29"
             >
               View Slideshow
             </div>
             <div
-              className="c31"
+              className="c30"
             >
               3
                Images
@@ -1896,7 +1850,7 @@ exports[`renders properly 1`] = `
           </div>
         </div>
         <div
-          className="c32 c33"
+          className="c31 c32"
         >
           <svg
             className="image-set"
@@ -1940,13 +1894,13 @@ exports[`renders properly 1`] = `
     </div>
   </div>
   <div
-    className="c25"
+    className="c24"
   >
     <div
       className="c5"
     >
       <div
-        className="c21"
+        className="c20"
         width={undefined}
       >
         <div

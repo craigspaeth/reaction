@@ -1,3 +1,4 @@
+import { get } from 'lodash'
 import React from "react"
 import styled, { StyledFunction } from "styled-components"
 import Colors from "../../../Assets/Colors"
@@ -9,6 +10,7 @@ interface DisplayPanelProps extends React.HTMLProps<HTMLDivElement> {
   unit: any
   campaign: any
 }
+
 interface DivUrlProps extends React.HTMLProps<HTMLDivElement> {
   imageUrl: string
   hoverImageUrl: string
@@ -18,9 +20,11 @@ interface DivUrlProps extends React.HTMLProps<HTMLDivElement> {
 export class DisplayPanel extends React.Component<DisplayPanelProps, null> {
   constructor(props) {
     super(props)
-    this.trackLink = this.trackLink.bind(this)
+    this.openLink = this.openLink.bind(this)
   }
 
+  // Rather than using an <a /> tag, which bad markup can oftentimes break during
+  // SSR, use JS to open link.
   @track((props, [e]) => ({
     action: "Click",
     label: "Display ad clickthrough",
@@ -28,16 +32,16 @@ export class DisplayPanel extends React.Component<DisplayPanelProps, null> {
     campaign_name: props.campaign.name,
     unit_layout: "panel"
   }))
-  trackLink(e) {
+  openLink(e) {
     e.preventDefault()
-    // location.assign(e.currentTarget.attributes.href.value)
+    window.open(url, '_blank')
   }
 
   render() {
     const { unit, campaign } = this.props
     const image = unit.assets[0] ? unit.assets[0].url : ""
     return (
-      <LinkWrapper href={unit.link.url} onClick={this.trackLink}>
+      <Wrapper href={unit.link.url} onClick={this.openLink}>
         <DisplayPanelContainer
           imageUrl={crop(image, { width: 680, height: 284 })}
           hoverImageUrl={resize(unit.logo, { width: 680 })}
@@ -47,15 +51,18 @@ export class DisplayPanel extends React.Component<DisplayPanelProps, null> {
           <Body dangerouslySetInnerHTML={{ __html: unit.body }} />
           <SponsoredBy>{`Sponsored by ${campaign.name}`}</SponsoredBy>
         </DisplayPanelContainer>
-      </LinkWrapper>
+      </Wrapper>
     )
   }
 }
 
-const LinkWrapper = styled.a`
+const Wrapper = styled.div`
+  cursor: pointer;
   text-decoration: none;
   color: black;
+  margin-top: 50px;
 `
+
 const Image = styled.div`
   margin-bottom: 15px;
   width: 100%;
@@ -63,7 +70,9 @@ const Image = styled.div`
   background-color: black;
   box-sizing: border-box;
 `
+
 const Div: StyledFunction<DivUrlProps> = styled.div
+
 const DisplayPanelContainer = Div`
   display: flex;
   flex-direction: column;
@@ -88,10 +97,12 @@ const DisplayPanelContainer = Div`
     }
   }
 `
+
 const Headline = styled.div`
   ${Fonts.unica("s16", "medium")} line-height: 1.23em;
   margin-bottom: 3px;
 `
+
 const Body = styled.div`
   ${Fonts.garamond("s15")} line-height: 1.53em;
   margin-bottom: 30px;
@@ -99,6 +110,7 @@ const Body = styled.div`
     color: black;
   }
 `
+
 const SponsoredBy = styled.div`
   ${Fonts.avantgarde("s11")} color: ${Colors.grayRegular};
 `
