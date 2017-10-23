@@ -4,8 +4,8 @@ import * as React from "react"
 import styled, { StyledFunction } from "styled-components"
 import Events from "../../Utils/Events"
 import track from "../../Utils/track"
-import DisplayCanvas from "./Display/Canvas"
-import DisplayPanel from "./Display/DisplayPanel"
+import { DisplayCanvas } from "./Display/Canvas"
+import { DisplayPanel } from "./Display/DisplayPanel"
 import { EmailSignup } from "./EmailSignup"
 import { Header } from "./Header/Header"
 import { FeatureLayout } from "./Layouts/FeatureLayout"
@@ -123,13 +123,13 @@ export class Article extends React.Component<ArticleProps, ArticleState> {
     const relatedArticlePanel = relatedArticlesForPanel ? (
       <RelatedArticlesPanel label={"Related Stories"} articles={relatedArticlesForPanel} />
     ) : (
-      false
-    )
+        false
+      )
     const relatedArticleCanvas = relatedArticlesForCanvas ? (
       <RelatedArticlesCanvas articles={relatedArticlesForCanvas} vertical={article.vertical} />
     ) : (
-      false
-    )
+        false
+      )
     const emailSignup = this.props.emailSignupUrl ? <EmailSignup signupUrl={this.props.emailSignupUrl} /> : false
     const campaign = omit(this.props.display, "panel", "canvas")
     const readMoreTruncation = this.state.isTruncated ? <ReadMore onClick={this.removeTruncation} /> : false
@@ -139,13 +139,13 @@ export class Article extends React.Component<ArticleProps, ArticleState> {
         <DisplayCanvas unit={this.props.display.canvas} campaign={campaign} />
       </div>
     ) : (
-      false
-    )
+        false
+      )
     const displayPanel = this.props.display ? (
       <DisplayPanel unit={this.props.display.panel} campaign={campaign} />
     ) : (
-      false
-    )
+        false
+      )
     return (
       <div>
         <ReadMoreWrapper isTruncated={this.state.isTruncated} hideButton={this.removeTruncation}>

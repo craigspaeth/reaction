@@ -2,6 +2,7 @@ import React from "react"
 import styled, { StyledFunction } from "styled-components"
 import Colors from "../../../Assets/Colors"
 import { crop, resize } from "../../../Utils/resizer"
+import { track } from "../../../Utils/track"
 import { Fonts } from "../Fonts"
 
 interface DisplayPanelProps extends React.HTMLProps<HTMLDivElement> {
@@ -13,22 +14,42 @@ interface DivUrlProps extends React.HTMLProps<HTMLDivElement> {
   hoverImageUrl: string
 }
 
-export const DisplayPanel: React.SFC<DisplayPanelProps> = props => {
-  const { unit, campaign } = props
-  const image = unit.assets[0] ? unit.assets[0].url : ""
-  return (
-    <LinkWrapper href={unit.link.url}>
-      <DisplayPanelContainer
-        imageUrl={crop(image, { width: 680, height: 284 })}
-        hoverImageUrl={resize(unit.logo, { width: 680 })}
-      >
-        <Image />
-        <Headline>{unit.headline}</Headline>
-        <Body dangerouslySetInnerHTML={{ __html: unit.body }} />
-        <SponsoredBy>{`Sponsored by ${campaign.name}`}</SponsoredBy>
-      </DisplayPanelContainer>
-    </LinkWrapper>
-  )
+@track()
+export class DisplayPanel extends React.Component<DisplayPanelProps, null> {
+  constructor(props) {
+    super(props)
+    this.trackLink = this.trackLink.bind(this)
+  }
+
+  @track((props, [e]) => ({
+    action: "Click",
+    label: "Display ad clickthrough",
+    entity_type: "display_ad",
+    campaign_name: props.campaign.name,
+    unit_layout: "panel"
+  }))
+  trackLink(e) {
+    e.preventDefault()
+    // location.assign(e.currentTarget.attributes.href.value)
+  }
+
+  render() {
+    const { unit, campaign } = this.props
+    const image = unit.assets[0] ? unit.assets[0].url : ""
+    return (
+      <LinkWrapper href={unit.link.url} onClick={this.trackLink}>
+        <DisplayPanelContainer
+          imageUrl={crop(image, { width: 680, height: 284 })}
+          hoverImageUrl={resize(unit.logo, { width: 680 })}
+        >
+          <Image />
+          <Headline>{unit.headline}</Headline>
+          <Body dangerouslySetInnerHTML={{ __html: unit.body }} />
+          <SponsoredBy>{`Sponsored by ${campaign.name}`}</SponsoredBy>
+        </DisplayPanelContainer>
+      </LinkWrapper>
+    )
+  }
 }
 
 const LinkWrapper = styled.a`
@@ -57,13 +78,13 @@ const DisplayPanelContainer = Div`
   &:hover {
     ${Image} {
       ${props =>
-        props.hoverImageUrl
-          ? `
+    props.hoverImageUrl
+      ? `
           background: black url(${props.hoverImageUrl}) no-repeat center center;
           background-size: contain;
           border: 10px solid black;
         `
-          : ""}
+      : ""}
     }
   }
 `
