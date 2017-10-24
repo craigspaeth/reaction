@@ -115,6 +115,7 @@ exports[`renders the canvas in overlay layout 1`] = `
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  margin-bottom: -44px;
   box-sizing: border-box;
 }
 
@@ -213,6 +214,7 @@ exports[`renders the canvas in overlay layout 1`] = `
 @media (max-width:720px) {
   .c0 {
     padding: 0 20px;
+    margin-bottom: 0;
   }
 }
 
@@ -238,6 +240,7 @@ exports[`renders the canvas in overlay layout 1`] = `
   <a
     className="c2"
     href="http://artsy.net"
+    onClick={[Function]}
     target="_blank"
   >
     <div
@@ -413,6 +416,7 @@ exports[`renders the canvas in slideshow layout 1`] = `
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
+  margin-bottom: -44px;
   box-sizing: border-box;
 }
 
@@ -579,6 +583,12 @@ exports[`renders the canvas in slideshow layout 1`] = `
 }
 
 @media (max-width:720px) {
+  .c0 {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width:720px) {
   .c11 {
     margin: 35px 0 10px 0;
   }
@@ -610,6 +620,7 @@ exports[`renders the canvas in slideshow layout 1`] = `
           <a
             className="c5"
             href="http://artsy.net"
+            onClick={[Function]}
             target="_blank"
           >
             <div
@@ -801,6 +812,7 @@ exports[`renders the canvas in standard layout with image 1`] = `
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  margin-bottom: -44px;
   box-sizing: border-box;
 }
 
@@ -937,6 +949,7 @@ exports[`renders the canvas in standard layout with image 1`] = `
 @media (max-width:720px) {
   .c0 {
     padding: 0 20px;
+    margin-bottom: 0;
   }
 }
 
@@ -1158,6 +1171,7 @@ exports[`renders the canvas in standard layout with video 1`] = `
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  margin-bottom: -44px;
   box-sizing: border-box;
 }
 
@@ -1296,6 +1310,7 @@ exports[`renders the canvas in standard layout with video 1`] = `
 @media (max-width:720px) {
   .c0 {
     padding: 0 20px;
+    margin-bottom: 0;
   }
 }
 
