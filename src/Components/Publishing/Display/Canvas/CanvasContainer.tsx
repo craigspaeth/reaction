@@ -25,7 +25,7 @@ export class CanvasContainerComponent extends React.Component<CanvasContainerPro
     size: { width: 1250 }
   }
 
-  @track((props) => ({
+  @track(once((props) => ({
     action: "Impression",
     entity_type: "display_ad",
     campaign_name: props.campaign.name,
@@ -36,7 +36,7 @@ export class CanvasContainerComponent extends React.Component<CanvasContainerPro
         default: return "canvas_standard"
       }
     })()
-  }))
+  })))
   // tslint:disable-next-line:no-empty
   componentDidMount() { }
 
