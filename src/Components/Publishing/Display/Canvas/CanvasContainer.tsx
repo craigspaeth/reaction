@@ -25,18 +25,18 @@ export class CanvasContainerComponent extends React.Component<CanvasContainerPro
     size: { width: 1250 }
   }
 
-  @track(once(props => ({
+  @track((props) => ({
     action: "Impression",
     entity_type: "display_ad",
     campaign_name: props.campaign.name,
     unit_layout: (() => {
-      switch (props.campaign.unit && props.campaign.unit.layout) {
+      switch (props.unit.layout) {
         case "overlay": return "canvas_overlay"
         case "slideshow": return "canvas_slideshow"
         default: return "canvas_standard"
       }
     })()
-  })))
+  }))
   // tslint:disable-next-line:no-empty
   componentDidMount() { }
 
@@ -44,7 +44,7 @@ export class CanvasContainerComponent extends React.Component<CanvasContainerPro
   // Prevent links from blocking video playback.
   handleLinkClick(event) {
     if (event.target.className.includes('CanvasVideo')) {
-      event.target.preventDefault()
+      event.preventDefault()
     }
   }
 
