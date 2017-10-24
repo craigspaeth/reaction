@@ -49,6 +49,10 @@ function handleVideoLinkClick(event) {
 
 @track()
 export class CanvasContainerComponent extends React.Component<CanvasContainerProps, null> {
+  static defaultProps = {
+    size: { width: 1250 }
+  }
+
   @track(once(props => ({
     action: "Impression",
     entity_type: "display_ad",
@@ -93,12 +97,6 @@ export class CanvasContainerComponent extends React.Component<CanvasContainerPro
       )
     }
   }
-}
-
-CanvasContainerComponent.defaultProps = {
-  size: {
-    width: 1250,
-  },
 }
 
 interface DivProps extends React.HTMLProps<HTMLDivElement> {
