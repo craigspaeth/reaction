@@ -1,7 +1,9 @@
+import { once } from "lodash"
 import React from "react"
 import sizeMe from "react-sizeme"
 import styled, { StyledFunction } from "styled-components"
 import { crop } from "../../../../Utils/resizer"
+import { track } from "../../../../Utils/track"
 import { pMedia } from "../../../Helpers"
 import { sizeMeRefreshRate } from "../../Constants"
 import { CanvasSlideshow } from "./CanvasSlideshow"
@@ -41,37 +43,55 @@ function handleVideoLinkClick(event) {
   // TODO: Ensure that full element can be clicked on video complete
   // Prevent links from blocking video playback.
   if (event.target.className.includes('CanvasVideo')) {
-    event.target.preventDefault()
+    event.preventDefault()
   }
 }
 
-const CanvasContainerComponent: React.SFC<CanvasContainerProps> = props => {
-  const { campaign, disclaimer, size, unit } = props
+@track()
+export class CanvasContainerComponent extends React.Component<CanvasContainerProps, null> {
+  @track(once(props => ({
+    action: "Impression",
+    entity_type: "display_ad",
+    campaign_name: props.campaign.name,
+    unit_layout: (() => {
+      switch (props.campaign.unit && props.campaign.unit.layout) {
+        case "overlay": return "canvas_overlay"
+        case "slideshow": return "canvas_slideshow"
+        default: return "canvas_standard"
+      }
+    })()
+  })))
+  // tslint:disable-next-line:no-empty
+  componentDidMount() { }
 
-  if (unit.layout === "overlay") {
-    return (
-      <CanvasLink href={unit.link.url} target="_blank" containerWidth={size.width} layout={unit.layout}>
-        <Background backgroundUrl={unit.assets[0].url} />
-        <CanvasText unit={unit} />
-      </CanvasLink>
-    )
-  } else if (unit.layout === "slideshow") {
-    return (
-      <CanvasSlideshow unit={unit} campaign={campaign} disclaimer={disclaimer} containerWidth={size.width}>
+  render() {
+    const { campaign, disclaimer, size, unit } = this.props
+
+    if (unit.layout === "overlay") {
+      return (
         <CanvasLink href={unit.link.url} target="_blank" containerWidth={size.width} layout={unit.layout}>
-          <CanvasText unit={unit} disclaimer={disclaimer} />
+          <Background backgroundUrl={unit.assets[0].url} />
+          <CanvasText unit={unit} />
         </CanvasLink>
-      </CanvasSlideshow>
-    )
-  } else {
-    return (
-      <CanvasLink onClick={handleVideoLinkClick} href={unit.link.url} target="_blank" containerWidth={size.width} layout={unit.layout}>
-        {renderAsset(unit.assets[0], campaign)}
-        <StandardContainer>
-          <CanvasText unit={unit} disclaimer={disclaimer} />
-        </StandardContainer>
-      </CanvasLink>
-    )
+      )
+    } else if (unit.layout === "slideshow") {
+      return (
+        <CanvasSlideshow unit={unit} campaign={campaign} disclaimer={disclaimer} containerWidth={size.width}>
+          <CanvasLink href={unit.link.url} target="_blank" containerWidth={size.width} layout={unit.layout}>
+            <CanvasText unit={unit} disclaimer={disclaimer} />
+          </CanvasLink>
+        </CanvasSlideshow>
+      )
+    } else {
+      return (
+        <CanvasLink onClick={handleVideoLinkClick} href={unit.link.url} target="_blank" containerWidth={size.width} layout={unit.layout}>
+          {renderAsset(unit.assets[0], campaign)}
+          <StandardContainer>
+            <CanvasText unit={unit} disclaimer={disclaimer} />
+          </StandardContainer>
+        </CanvasLink>
+      )
+    }
   }
 }
 
@@ -127,7 +147,7 @@ const CanvasLink = responsiveLink`
   ${props => pMedia.lg`
     ${props.layout !== "overlay" && "max-height: " + maxAssetSize(props.containerWidth).height + "px;"}
     ${props.layout === "standard" &&
-      `padding: 0 20px;
+    `padding: 0 20px;
        width: calc(100% - 40px);`}
   `}
   ${pMedia.sm`

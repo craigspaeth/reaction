@@ -1,4 +1,4 @@
-import { get } from 'lodash'
+import { once } from "lodash"
 import React from "react"
 import styled, { StyledFunction } from "styled-components"
 import Colors from "../../../Assets/Colors"
@@ -23,6 +23,15 @@ export class DisplayPanel extends React.Component<DisplayPanelProps, null> {
     this.openLink = this.openLink.bind(this)
   }
 
+  @track(once(props => ({
+    action: "Impression",
+    entity_type: "display_ad",
+    campaign_name: props.campaign.name,
+    unit_layout: "panel"
+  })))
+  // tslint:disable-next-line:no-empty
+  componentDidMount() { }
+
   // Rather than using an <a /> tag, which bad markup can oftentimes break during
   // SSR, use JS to open link.
   @track((props, [e]) => ({
@@ -34,7 +43,7 @@ export class DisplayPanel extends React.Component<DisplayPanelProps, null> {
   }))
   openLink(e) {
     e.preventDefault()
-    window.open(url, '_blank')
+    window.open(e.currentTarget.attributes.href.value, '_blank')
   }
 
   render() {
