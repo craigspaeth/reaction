@@ -1,4 +1,4 @@
-import { get, once } from "lodash"
+import { get } from "lodash"
 import React from "react"
 import styled, { StyledFunction } from "styled-components"
 import Colors from "../../../Assets/Colors"
@@ -23,12 +23,12 @@ export class DisplayPanel extends React.Component<DisplayPanelProps, null> {
     this.openLink = this.openLink.bind(this)
   }
 
-  @track(once(props => ({
+  @track(props => ({
     action: "Impression",
     entity_type: "display_ad",
     campaign_name: props.campaign.name,
     unit_layout: "panel"
-  })))
+  }))
   // tslint:disable-next-line:no-empty
   componentDidMount() { }
 

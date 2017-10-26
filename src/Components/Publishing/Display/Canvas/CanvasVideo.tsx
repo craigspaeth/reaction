@@ -1,4 +1,3 @@
-import { once } from "lodash"
 import React from "react"
 import styled from "styled-components"
 import track from "../../../../Utils/track"
@@ -19,13 +18,13 @@ export class CanvasVideo extends React.Component<VideoProps, any> {
     this.state = { isPlaying: false }
   }
 
-  @track(once((props) => ({
+  @track((props) => ({
     action: "Click",
     label: "Display ad play video",
     entity_type: "display_ad",
     campaign_name: props.campaign.name,
     unit_layout: "canvas_standard"
-  })))
+  }))
   onPlayVideo() {
     if (this.video) {
       if (this.video.paused) {

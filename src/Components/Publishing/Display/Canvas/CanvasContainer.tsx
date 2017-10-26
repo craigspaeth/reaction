@@ -1,4 +1,3 @@
-import { once } from "lodash"
 import React from "react"
 import sizeMe from "react-sizeme"
 import styled, { StyledFunction } from "styled-components"
@@ -30,12 +29,12 @@ export class CanvasContainerComponent extends React.Component<CanvasContainerPro
     this.openLink = this.openLink.bind(this)
   }
 
-  @track(once((props) => ({
+  @track((props) => ({
     action: "Impression",
     entity_type: "display_ad",
     campaign_name: props.campaign.name,
     unit_layout: unitLayout(props)
-  })))
+  }))
   // tslint:disable-next-line:no-empty
   componentDidMount() { }
 
